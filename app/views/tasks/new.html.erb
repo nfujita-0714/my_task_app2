@@ -1,0 +1,13 @@
+<h1>新規登録画面</h1>
+
+<%= form_with(model: Task.new, local: :true) do |form| %>
+  <div class="task_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="task_contents">
+    <%= form.label :contents %>
+    <%= form.text_field :contents %>
+  </div>
+  <%= form.submit"送信" %>
+<% end %>

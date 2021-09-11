@@ -1,0 +1,13 @@
+<h1>一覧画面</h1>
+<a href="/tasks/new">新規投稿画面に移る</a>
+
+<% @tasks.each do |task| %>
+  <p><%= task.id %></p>
+  <p><%= task.title %></p>
+  <p><%= task.contents %></p>
+
+  <%= link_to '編集画面へ', "/tasks/#{task.id}/edit/", method: :get %>
+  <%= link_to '詳細画面へ', "/tasks/#{task.id}/show/", method: :get %>
+  <%= link_to "削除画面へ", "/tasks/#{task.id}/destroy/", method: :delete %>
+
+  <% end %>
